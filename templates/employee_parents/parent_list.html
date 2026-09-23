@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Parents</title>
+</head>
+<body>
+    <h1>Employee Parents</h1>
+    <a href="{% url 'employee_parents:parent_add' %}">Add Parent Record</a>
+    <hr>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <ul>
+        {% for parent in parents %}
+            <li>
+                <a href="{% url 'employee_parents:parent_detail' parent.pk %}">{{ parent.employee_name }}</a>
+                - {{ parent.employee_id }}
+                <a href="{% url 'employee_parents:parent_edit' parent.pk %}">Edit</a>
+                <a href="{% url 'employee_parents:parent_delete' parent.pk %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No employee parent records yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
