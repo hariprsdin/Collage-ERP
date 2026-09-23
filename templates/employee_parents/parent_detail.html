@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Parent Details</title>
+</head>
+<body>
+    <h1>{{ parent.employee_name }}</h1>
+    <p><strong>Employee ID:</strong> {{ parent.employee_id }}</p>
+    <p><strong>Father:</strong> {{ parent.father_name }}</p>
+    <p><strong>Mother:</strong> {{ parent.mother_name }}</p>
+    <p><strong>Guardian:</strong> {{ parent.guardian_name }}</p>
+    <p><strong>Phone:</strong> {{ parent.phone }}</p>
+    <p><strong>Email:</strong> {{ parent.email }}</p>
+    <p><strong>Relation:</strong> {{ parent.relation }}</p>
+    <p><strong>Address:</strong> {{ parent.address }}</p>
+    <a href="{% url 'employee_parents:parent_edit' parent.pk %}">Edit</a>
+    <a href="{% url 'employee_parents:parent_list' %}">Back to list</a>
+</body>
+</html>
